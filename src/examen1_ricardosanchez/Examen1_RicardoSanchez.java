@@ -153,21 +153,38 @@ public class Examen1_RicardoSanchez {
                                         break;
                                     case 2://Modificar proyecto------------------------------------------------------------------------
                                         System.out.println("Modificar proyectos");
-                                        for (int i = 0; i < U.get(NumUs).getUP().size(); i++) {
-                                            System.out.println("Proyecto #" + i + "   " + U.get(NumUs).getUP().get(i));
-                                        }
-                                        System.out.println("Ingrese el numero del proyecto a modificar");
-                                        int modPro = sc.nextInt();
-                                        System.out.println("Lista de archivos en el proyecto");
-                                        for (int i = 0; i < U.get(NumUs).getUP().get(modPro).getArchivos().size(); i++) {
-                                            System.out.println("Archivo #" + i + "   " + U.get(NumUs).getUP().get(modPro).getArchivos());
-                                        }
-                                        System.out.println("Menu de modificacion de proyectos"
-                                                + "\n 1)Crear archivo"
-                                                + "\n 2)Modificar archivo"
-                                                + "\n 3)Eliminar archivo"
-                                                + "\n 4)Ingresar comando"
-                                                + "\n 5)Volver");
+                                        char resp4 = 'n';
+                                        do {
+                                            for (int i = 0; i < U.get(NumUs).getUP().size(); i++) {
+                                                System.out.println("Proyecto #" + i + "   " + U.get(NumUs).getUP().get(i));
+                                            }
+                                            System.out.println("Ingrese el numero del proyecto a modificar");
+                                            int modPro = sc.nextInt();
+                                            System.out.println("Lista de archivos en el proyecto");
+                                            for (int i = 0; i < U.get(NumUs).getUP().get(modPro).getArchivos().size(); i++) {
+                                                System.out.println("Archivo #" + i + "   " + U.get(NumUs).getUP().get(modPro).getArchivos());
+                                            }
+                                            System.out.println("Menu de modificacion de proyectos"
+                                                    + "\n 1)Crear archivo"
+                                                    + "\n 2)Modificar archivo"
+                                                    + "\n 3)Eliminar archivo"
+                                                    + "\n 4)Ingresar comando"
+                                                    + "\n 5)Volver"
+                                                    + "\nIngrese el numero de la opcion que desea");
+                                            int opcionModPro = sc.nextInt();
+                                            switch (opcionModPro) {
+                                                case 1:
+                                                    
+                                                    break;
+
+                                                case 5:
+                                                    resp4 = 's';
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        } while (resp4 == 'S' || resp4 == 's');
+
                                         break;
 
                                     case 3://Eliminar proyecto-------------------------------------------------------------------------
