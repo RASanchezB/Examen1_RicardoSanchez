@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Carpetas extends Archivos{
     private ArrayList <ArchivosDTexto> ADT = new ArrayList();
+    private ArrayList <Carpetas> AC = new ArrayList();
 
     public Carpetas() {
         super();
@@ -15,6 +16,14 @@ public class Carpetas extends Archivos{
 
     public void setADT(ArrayList<ArchivosDTexto> ADT) {
         this.ADT = ADT;
+    }
+
+    public ArrayList<Carpetas> getAC() {
+        return AC;
+    }
+
+    public void setAC(ArrayList<Carpetas> AC) {
+        this.AC = AC;
     }
 
     @Override

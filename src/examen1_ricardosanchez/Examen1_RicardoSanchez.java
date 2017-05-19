@@ -219,7 +219,44 @@ public class Examen1_RicardoSanchez {
                                                     }
                                                     System.out.println("Ingrese el numero del archivo a modificar");
                                                     int ModAr = sc.nextInt();
-                                                    
+                                                    System.out.println("Lista de carpetas");
+                                                    if (U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr) instanceof Carpetas) {
+                                                        System.out.println("Menu archivos"
+                                                                + "\n 1) Agregar archivo de texto"
+                                                                + "\n 2) Agregar carpeta"
+                                                                + "\nIngrese el numero de la opcion que desea");
+                                                        int opModC = sc.nextInt();
+                                                        switch (opModC) {
+                                                            case 1://Agregar nuevo archivo de texto dentro de la carpeta /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+                                                                for (int i = 0; i < U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().size(); i++) {
+                                                                    System.out.println("Carpeta#" + i + "   " + U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(i));
+                                                                }
+                                                                System.out.println("Ingrese el texto del archivo");
+                                                                int ModArPC = sc.nextInt();
+                                                                Texto = sc.nextLine();
+                                                                U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(ModArPC).getADT().add(new ArchivosDTexto(Texto));
+                                                                break;
+                                                            case 2://Agregar carpeta dentro de la carpeta/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+                                                                for (int i = 0; i < U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().size(); i++) {
+                                                                    System.out.println("Carpeta#" + i + "   " + U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(i));
+                                                                }
+                                                                System.out.println("Ingrese el numero de la carpeta en la que desea ingresar otra carpeta");
+                                                                int ModArPCA = sc.nextInt();
+                                                                 U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(ModArPCA).getAC().add(new Carpetas());
+                                                                break;
+                                                            default:
+                                                                break;
+                                                        }
+                                                    } else {
+                                                        for (int i = 0; i < U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPAT().size(); i++) {
+                                                            System.out.println("ArchivoDT#" + i + "   " + U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPAT().get(i));
+                                                        }
+                                                        System.out.println("Ingrese el numero del archivo de texto a editar");
+                                                        int EditAr = sc.nextInt();
+                                                        System.out.println("Ingrese el texto nuevo");
+                                                        Texto = sc.nextLine();
+                                                        U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPAT().get(EditAr).setTexto(Texto);
+                                                    }
                                                     break;
                                                 case 3://Eliminar archivo************************************************************
                                                     System.out.println("Eliminar archivo");

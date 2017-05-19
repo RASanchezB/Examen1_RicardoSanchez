@@ -1,8 +1,12 @@
 package examen1_ricardosanchez;
 
+import java.util.ArrayList;
+
 public class Archivos extends Proyectos{
     private String NombreA;
     private int tamano;
+    private ArrayList<Carpetas> PC = new ArrayList();
+    private ArrayList<ArchivosDTexto> PAT = new ArrayList();
 
     public Archivos() {
         super();
@@ -27,6 +31,22 @@ public class Archivos extends Proyectos{
 
     public void setTamano(int tamano) {
         this.tamano = tamano;
+    }
+
+    public ArrayList<Carpetas> getPC() {
+        return PC;
+    }
+
+    public void setPC(ArrayList<Carpetas> PC) {
+        this.PC = PC;
+    }
+
+    public ArrayList<ArchivosDTexto> getPAT() {
+        return PAT;
+    }
+
+    public void setPAT(ArrayList<ArchivosDTexto> PAT) {
+        this.PAT = PAT;
     }
 
     @Override
