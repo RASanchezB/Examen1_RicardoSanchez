@@ -1,11 +1,14 @@
 package examen1_ricardosanchez;
 
+import java.util.ArrayList;
+
 public class Usuarios {
    private String Nombre;
    private int Edad;
    private String Profesion;
    private String Username;
    private String Contrasena;
+   private ArrayList <Proyectos> UP = new ArrayList();
 
     public Usuarios() {
     }
@@ -58,6 +61,14 @@ public class Usuarios {
         this.Contrasena = Contrasena;
     }
 
+    public ArrayList<Proyectos> getUP() {
+        return UP;
+    }
+
+    public void setUP(ArrayList<Proyectos> UP) {
+        this.UP = UP;
+    }
+    
     @Override
     public String toString() {
         return "Usuario:" + "\n   Nombre=" + Nombre + "\n   Edad=" + Edad + "\n   Profesion=" + Profesion + "\n   Username=" + Username + "\n   Contrasena=" + Contrasena;
