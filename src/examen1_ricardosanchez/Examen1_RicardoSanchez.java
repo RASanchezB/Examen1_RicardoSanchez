@@ -17,6 +17,13 @@ public class Examen1_RicardoSanchez {
     static ArrayList<Archivos> Archivos = new ArrayList();
     static ArrayList<Usuarios> Colaboradores = new ArrayList();
     static int CantidadComit;
+    //Objetos de archivos
+    static String NombreA;
+    static int tamano;
+    //Objetos de ArchivosDTexto
+    static String Texto;
+    //Objetos necesarios extras
+    static String Comando;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -139,7 +146,7 @@ public class Examen1_RicardoSanchez {
                                         + "Ingrese el numero de la opcion que desea:");
                                 int opcionPro = sc.nextInt();
                                 switch (opcionPro) {
-                                    case 1://Crear archivo ---------------------------------------------------------------------------
+                                    case 1://Crear proyecto ---------------------------------------------------------------------------
                                         System.out.println("Ingrese el nombre:");
                                         NombreP = sc.next();
                                         U.get(NumUs).getUP().add(new Proyectos(NombreP, Cantidadcomit));
@@ -164,6 +171,8 @@ public class Examen1_RicardoSanchez {
                                             for (int i = 0; i < U.get(NumUs).getUP().get(modPro).getArchivos().size(); i++) {
                                                 System.out.println("Archivo #" + i + "   " + U.get(NumUs).getUP().get(modPro).getArchivos());
                                             }
+                                            System.out.println("Ingrese el numero del proyecto a modificar");
+                                            int opModAr = sc.nextInt();
                                             System.out.println("Menu de modificacion de proyectos"
                                                     + "\n 1)Crear archivo"
                                                     + "\n 2)Modificar archivo"
@@ -173,16 +182,70 @@ public class Examen1_RicardoSanchez {
                                                     + "\nIngrese el numero de la opcion que desea");
                                             int opcionModPro = sc.nextInt();
                                             switch (opcionModPro) {
-                                                case 1:
+                                                case 1://Crear archivo***************************************************************
+                                                    System.out.println("Creacion de archivos");
+                                                    System.out.println("Ingrese el nombre");
+                                                    NombreA = sc.next();
+                                                    System.out.println("Ingrese el tamano");
+                                                    tamano = sc.nextInt();
+                                                    U.get(NumUs).getUP().get(opModAr).getArchivos().add(new Archivos(NombreA, tamano));
+                                                    System.out.println("Es su archivo una:"
+                                                            + "\n 1)Carpeta"
+                                                            + "\n 2)Archivo de texto"
+                                                            + "ingrese el numero asignado a su opcion");
+                                                    int opArchivo = sc.nextInt();
+                                                    switch (opArchivo) {
+                                                        case 1:
+                                                            U.get(NumUs).getUP().get(opModAr).getArchivos().add(new Carpetas());
+                                                            break;
+                                                        case 2:
+                                                            System.out.println("Ingrese su contenido");
+                                                            Texto = sc.nextLine();
+                                                            U.get(NumUs).getUP().get(opModAr).getArchivos().add(new ArchivosDTexto(Texto));
+                                                            break;
+                                                        default:
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 2://Modificar archivo***********************************************************
+                                                    System.out.println("Modificacion del archivo");
+                                                    for (int i = 0; i < U.get(NumUs).getUP().size(); i++) {
+                                                        System.out.println("Proyecto #" + i + "   " + U.get(NumUs).getUP().get(i));
+                                                    }
+                                                    System.out.println("Ingrese el numero del proyecto a modificar");
+                                                    int ModArPro = sc.nextInt();
+                                                    for (int i = 0; i < U.get(NumUs).getUP().get(ModArPro).getArchivos().size(); i++) {
+                                                        System.out.println("Archivo#" + i + "   " + U.get(NumUs).getUP().get(ModArPro).getArchivos().get(i));
+                                                    }
+                                                    System.out.println("Ingrese el numero del archivo a modificar");
+                                                    int ModAr = sc.nextInt();
                                                     
                                                     break;
-
+                                                case 3://Eliminar archivo************************************************************
+                                                    System.out.println("Eliminar archivo");
+                                                    for (int i = 0; i < U.get(NumUs).getUP().size(); i++) {
+                                                        System.out.println("Proyecto #" + i + "   " + U.get(NumUs).getUP().get(i));
+                                                    }
+                                                    System.out.println("Ingrese el numero del proyecto a modificar");
+                                                    int ElimArPro = sc.nextInt();
+                                                    for (int i = 0; i < U.get(NumUs).getUP().get(ElimArPro).getArchivos().size(); i++) {
+                                                        System.out.println("Archivo#" + i + "   " + U.get(NumUs).getUP().get(ElimArPro).getArchivos().get(i));
+                                                    }
+                                                    System.out.println("Ingrese el numero del archivo a eliminar");
+                                                    int ElimAr = sc.nextInt();
+                                                    U.get(NumUs).getUP().get(ElimArPro).getArchivos().remove(ElimAr);
+                                                    break;
+                                                case 4://Ingresar comando************************************************************
+                                                    System.out.println("Ingrese un comando:");
+                                                    Comando = sc.nextLine();
+                                                    break;
                                                 case 5:
                                                     resp4 = 's';
                                                     break;
                                                 default:
                                                     break;
                                             }
+
                                         } while (resp4 == 'S' || resp4 == 's');
 
                                         break;

@@ -1,14 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1_ricardosanchez;
 
-/**
- *
- * @author Nichole
- */
-public class ArchivosDTexto {
+public class ArchivosDTexto extends Archivos{
+    private String Texto;
+
+    public ArchivosDTexto() {
+        super();
+    }
+
+    public ArchivosDTexto(String Texto) {
+        this.Texto = Texto;
+    }
+
+    public String getTexto() {
+        return Texto;
+    }
+
+    public void setTexto(String Texto) {
+        this.Texto = Texto;
+    }
+
+    @Override
+    public String toString() {
+        return "ArchivosDTexto{" + "Texto=" + Texto + '}';
+    }
+    
     
 }

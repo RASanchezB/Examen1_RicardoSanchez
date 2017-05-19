@@ -1,14 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1_ricardosanchez;
 
-/**
- *
- * @author Nichole
- */
-public class Carpetas {
+import java.util.ArrayList;
+
+public class Carpetas extends Archivos{
+    private ArrayList <ArchivosDTexto> ADT = new ArrayList();
+
+    public Carpetas() {
+        super();
+    }
+
+    public ArrayList<ArchivosDTexto> getADT() {
+        return ADT;
+    }
+
+    public void setADT(ArrayList<ArchivosDTexto> ADT) {
+        this.ADT = ADT;
+    }
+
+    @Override
+    public String toString() {
+        return "Carpetas{" + "ADT=" + ADT + '}';
+    }
+    
     
 }
