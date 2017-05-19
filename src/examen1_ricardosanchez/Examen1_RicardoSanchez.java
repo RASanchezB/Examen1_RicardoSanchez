@@ -242,7 +242,7 @@ public class Examen1_RicardoSanchez {
                                                                 }
                                                                 System.out.println("Ingrese el numero de la carpeta en la que desea ingresar otra carpeta");
                                                                 int ModArPCA = sc.nextInt();
-                                                                 U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(ModArPCA).getAC().add(new Carpetas());
+                                                                U.get(NumUs).getUP().get(ModArPro).getArchivos().get(ModAr).getPC().get(ModArPCA).getAC().add(new Carpetas());
                                                                 break;
                                                             default:
                                                                 break;
@@ -275,6 +275,21 @@ public class Examen1_RicardoSanchez {
                                                 case 4://Ingresar comando************************************************************
                                                     System.out.println("Ingrese un comando:");
                                                     Comando = sc.nextLine();
+                                                    if (Comando.equals("meow push")) {
+                                                        System.out.println("Ingrese el nombre de su colaborador");
+                                                        String colab2 = sc.next();
+                                                        for (int i = 0; i < U.get(NumUs).getUP().size(); i++) {
+                                                            System.out.println("Proyecto #" + i + "   " + U.get(NumUs).getUP().get(i));
+                                                        }
+                                                        System.out.println("Ingrese el numero del proyecto que compartira");
+                                                        int compa = sc.nextInt();
+                                                        System.out.println("Los cambios seran agregados a sus colaboradores");
+                                                        for (int i = 0; i < U.size(); i++) {
+                                                            if (U.get(i).getUsername().equals(colab2)) {
+                                                                
+                                                            }
+                                                        }
+                                                    }
                                                     break;
                                                 case 5:
                                                     resp4 = 's';
