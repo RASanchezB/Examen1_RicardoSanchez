@@ -54,9 +54,78 @@ public class Examen1_RicardoSanchez {
                     }
                     System.out.println("Ingrese el numero del usuario que desea modificar");
                     int opMod = sc.nextInt();
+                    while (opMod > U.size() || opMod < 0){
+                        System.out.println("Numero invalido. Ingrese otro:");
+                        opMod = sc.nextInt();
+                    }
+                    System.out.println("Cual de los siguientes desea cambiar:"
+                            + "\n 1) Username"
+                            + "\n 2) Contrasena"
+                            + "\nIngrese el numero del objeto a cambiar");
+                    int opMod2 = sc.nextInt();
+                    
+                    switch (opMod2) {
+                        case 1://Cambiar username------------------------------------------------------------------------------------
+                            System.out.println("Ingrese el nuevo username");
+                            Username = sc.next();
+                            U.get(opMod).setUsername(Username);
+                            break;
+                        case 2://cambiar contrasena---------------------------------------------------------------------------------
+                            System.out.println("Ingrese la nueva contrasena");
+                            Contrasena = sc.next();
+                            U.get(opMod).setContrasena(Contrasena);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
+                    
+                case 3://Eliminar usuarios===========================================================================================
+                    System.out.println("Eliminar usuarios");
+                    for (int i = 0; i < U.size(); i++) {
+                        System.out.println("Usuario #" + i + " " + U.get(i));
+                    }
+                    System.out.println("Ingrese el numero del usuario a eliminar");
+                    int opElim = sc.nextInt();
+                    while (opElim > U.size() || opElim < 0){
+                        System.out.println("Numero invalido. Ingrese otro:");
+                        opElim = sc.nextInt();
+                    }
+                    U.remove(opElim);
+                    break;
+                    
+                case 4://Listar usuarios=============================================================================================
+                System.out.println("Listar usuarios");
+                    for (int i = 0; i < U.size(); i++) {
+                        System.out.println("Usuario #" + i + " " + U.get(i));
+                    }
+                    break;
+                    
+                case 5://Log In======================================================================================================
+                    int NumUs = -1;
+                    System.out.println("LOG IN");
+                    System.out.println("Ingrese su Usernarme");
+                    String LUsername = sc.next();
+                    for (int i = 0; i < U.size(); i++) {
+                        if(U.get(i).getUsername().equals(LUsername)){
+                            NumUs = i;
+                        }
+                    }
+                    if(NumUs == -1){
+                        System.out.println("No hay un usuario con ese username");  
+                    }else{
+                        System.out.println("Ingrese su contrasena");
+                        String LContrasena = sc.next();
+                        if(U.get(NumUs).getContrasena().equals(LContrasena)){
+                            
+                        }else{
+                            System.out.println("Contrsena incorrecta");
+                        }
+                    }
+                    break;
+                    
                 default:
-                    throw new AssertionError();
+                    break;
             }
 
             System.out.println("Desea regresar al menu principal [S/N]");

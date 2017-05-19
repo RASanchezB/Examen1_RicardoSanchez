@@ -60,7 +60,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuario{" + "\n Nombre=" + Nombre + "\n Edad=" + Edad + "\n Profesion=" + Profesion + "\n Username=" + Username + "\n Contrasena=" + Contrasena + '}';
+        return "Usuario:" + "\n   Nombre=" + Nombre + "\n   Edad=" + Edad + "\n   Profesion=" + Profesion + "\n   Username=" + Username + "\n   Contrasena=" + Contrasena;
     }
    
 }
